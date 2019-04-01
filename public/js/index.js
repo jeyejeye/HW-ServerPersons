@@ -32,25 +32,36 @@ function saveDataLS() {
   localStorage.setItem('data', JSON.stringify(dataArr));
 }
 
+function parseData(json) {
+  const allData = JSON.parse(json);
+  for (let i = 0; i < allData.rows.length; i++) {
+      addEntry(allData.rows[i].ID, allData.rows[i].FNAME, allData.rows[i].LNAME, allData.rows[i].AGE);
+    }
+}
+
 // отправка строки для записи в БД
 function requestRefreshAllEntries() {
+  return new Promise(function(resolve, reject) {
   let request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
       console.log('удачно');
-      const allData = JSON.parse(this.responseText);
+      
+      resolve(this.response);
+      // const allData = JSON.parse(this.responseText);
 
-      //Очистка всех предыдущих данных из таблицы
-      //....
+      // //Очистка всех предыдущих данных из таблицы
+      // //....
 
-      for (let i = 0; i < allData.rows.length; i++) {
-        addEntry(allData.rows[i].ID, allData.rows[i].FNAME, allData.rows[i].LNAME, allData.rows[i].AGE);
-      }
+      // for (let i = 0; i < allData.rows.length; i++) {
+      //   addEntry(allData.rows[i].ID, allData.rows[i].FNAME, allData.rows[i].LNAME, allData.rows[i].AGE);
+      // }
     }
   };
   request.open("POST", "/refreshAllEntries", true);
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   request.send();
+})
 }
 
 

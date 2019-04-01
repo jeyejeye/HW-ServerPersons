@@ -100,6 +100,7 @@ app.post('/loginUser', urlencodedParser, function (req, res) {
 });
 
 app.post('/createUser', urlencodedParser, function (req, res) {
+    console.log(req.body);
     const sql = `select * from CREATE_USER('${req.body.username}', '${req.body.password}', '${req.body.email}')`;
 
     const out = {err: true, message: "", id: -1};
