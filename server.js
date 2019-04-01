@@ -26,6 +26,7 @@ app.get('/', function (req, res) {
     res.redirect('/login.html');
 });
 
+
 app.get('/checkDbConnection', urlencodedParser, function (req, res) {
     try {
         const conn = fb.createConnection();
@@ -136,19 +137,27 @@ app.post('/createUser', urlencodedParser, function (req, res) {
     }
 });
 
+app.post('/logoutUser', urlencodedParser, function (req, res) {
+    console.log(req.body);
+    req.session.user_id = -1;
+    res.redirect('/login.html');
+});
+
 // возвран полного списка строк для текущего юзера
 app.post('/refreshAllEntries', urlencodedParser, function (req, res) {
     const sql = `select * from PERSONS where ID_USER = ${req.session.user_id}`;
-
+    const sql2 = `select NAME from USERS where ID = ${req.session.user_id}`;
     console.log(sql);
     const out = {err: false, message: "", id: -1, rows: []};
     try {
         const conn = fb.createConnection();
         conn.connectSync(dbConnParams.database, dbConnParams.user, dbConnParams.password, dbConnParams.role);
-        const rs = conn.querySync(sql);
+        let rs = conn.querySync(sql);
         out.rows = rs.fetchSync("all", true);
+        rs = conn.querySync(sql2);
+        out.user = rs.fetchSync("all", true);
         conn.commitSync();
-        conn.disconnect();
+        conn.disconnect(); 
         console.log(out);
         res.end(JSON.stringify(out));
     } catch (e) {

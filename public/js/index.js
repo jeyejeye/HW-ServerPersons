@@ -34,9 +34,10 @@ function saveDataLS() {
 
 function parseData(json) {
   const allData = JSON.parse(json);
-  for (let i = 0; i < allData.rows.length; i++) {
+    for (let i = 0; i < allData.rows.length; i++) {
       addEntry(allData.rows[i].ID, allData.rows[i].FNAME, allData.rows[i].LNAME, allData.rows[i].AGE);
-    }
+     } 
+     document.getElementById('toolbar__caption').innerHTML += allData.user[0].NAME;
 }
 
 // отправка строки для записи в БД
@@ -45,17 +46,9 @@ function requestRefreshAllEntries() {
   let request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
-      console.log('удачно');
-      
+      console.log('удачно');  
+      console.log(this.response);   
       resolve(this.response);
-      // const allData = JSON.parse(this.responseText);
-
-      // //Очистка всех предыдущих данных из таблицы
-      // //....
-
-      // for (let i = 0; i < allData.rows.length; i++) {
-      //   addEntry(allData.rows[i].ID, allData.rows[i].FNAME, allData.rows[i].LNAME, allData.rows[i].AGE);
-      // }
     }
   };
   request.open("POST", "/refreshAllEntries", true);
@@ -66,9 +59,7 @@ function requestRefreshAllEntries() {
 
 
 function requestAddNewEntry(id, fName, lName, age) {
-  let userID = '1';
-  let formData = 'userID=' + encodeURIComponent(userID);
-  formData += '&id=' + encodeURIComponent(id);
+  let formData = '&id=' + encodeURIComponent(id);
   formData += '&fName=' + encodeURIComponent(fName);
   formData += '&lName=' + encodeURIComponent(lName);
   formData += '&age=' + encodeURIComponent(age);
@@ -84,9 +75,7 @@ function requestAddNewEntry(id, fName, lName, age) {
 }
 
 function requestUpdateEntry(id, fName, lName, age) {
-  let userID = '1';
-  let formData = 'userID=' + encodeURIComponent(userID);
-  formData += '&id=' + encodeURIComponent(id);
+  let formData = '&id=' + encodeURIComponent(id);
   formData += '&fName=' + encodeURIComponent(fName);
   formData += '&lName=' + encodeURIComponent(lName);
   formData += '&age=' + encodeURIComponent(age);
@@ -103,9 +92,7 @@ function requestUpdateEntry(id, fName, lName, age) {
 };
 
 function requestRemoveEntry(id) {
-  let userID = '1';
-  let formData = 'userID=' + encodeURIComponent(userID);
-  formData += '&id=' + encodeURIComponent(id);
+  let formData = '&id=' + encodeURIComponent(id);
   let request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
@@ -118,8 +105,7 @@ function requestRemoveEntry(id) {
 }
 
 function requestClearEntry() {
-  let userID = '1';
-  let formData = 'userID=' + encodeURIComponent(userID);
+  let formData = '&clear=true';
   let request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
