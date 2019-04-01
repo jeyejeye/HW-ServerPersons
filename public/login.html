@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework User's Database</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- Header -->
+        <div class="header">
+            <div class="row">
+                <div class="container">
+                    <div class="toolbar">
+                        <div class="toolbar__logo">
+                            Homework User's Database
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header -->
+        <!-- Main  -->
+        <div class="main">
+            <div class="row">
+                <div class="container">
+                    <!-- center section -->
+
+                    <form class="login__form" id="loginForm" action="loginUser" method="post">
+                        <h2><i class="fa fa-sign-in" aria-hidden="true"></i> Log in to your account</h2>
+                        <label>Username:</label>
+                        <input type="text" id="loginFormName" name="username" class="data__input" placeholder="Username:" required>
+                        <label>Password:</label>
+                        <input type="password" id="loginFormPassword" name="password" class="data__input" placeholder="Password:"
+                            required>
+                        <br>
+                        <button type="submit" class="data__button" id="signInBtn">Sign in</button>
+                        <br>
+                        Don't have an account? <a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Create a new account</a>
+                    </form>
+
+
+                    <!-- center section -->
+                </div>
+            </div>
+        </div>
+        <!-- Main  -->
+        <!-- footer -->
+        <div class="footer">
+            <div class="row">
+                <div class="container">
+                    2019 :: Homework User's Database
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+    </div>
+    <!-- wrapper -->
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

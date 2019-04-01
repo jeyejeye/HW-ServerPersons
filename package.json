@@ -1,0 +1,17 @@
+{
+  "name": "hwserverpersons",
+  "version": "1.0.0",
+  "description": "home work 13",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-session": "^1.3.3",
+    "express": "4.*",
+    "firebird": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework User's Database</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- Header -->
+        <div class="header">
+            <div class="row">
+                <div class="container">
+                    <div class="toolbar">
+                        <div class="toolbar__logo">
+                            Homework User's Database
+                        </div>
+                        <div class="toolbar__login">
+                            <button class="toolbar__button" id="loginBtn"><i class="fa fa-user-circle"
+                                    aria-hidden="true"></i></button>
+                            <button class="toolbar__button red" id="logoutBtn"><i class="fa fa-sign-out"
+                                    aria-hidden="true"></i></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header -->
+        <!-- Main  -->
+        <div class="main">
+            <div class="row">
+                <div class="container">
+                    <!-- left sidebar -->
+                    <div class="col-3">
+                        <div class="left__sidebar">
+                            <div id="msgBox" class="msgBox"></div>
+                            <form class="left__sidebar_form" id="left__sidebar_form" action="" method="post">
+                                <label>Id:</label>
+                                <input type="text" id="id" name="id" class="data__input" placeholder="id">
+                                <label>First name:</label>
+                                <input type="text" id="fname" name="fname" class="data__input" placeholder="First name">
+                                <label>Last name:</label>
+                                <input type="text" id="lname" name="lname" class="data__input" placeholder="Last name">
+                                <label>Age:</label>
+                                <input type="text" id="age" name="age" class="data__input" placeholder="Age">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- left sidebar -->
+                    <!-- center section -->
+                    <div class="col-7">
+                        <div id="data__Table" class="data__table">
+                            <h2>Data Table</h2>
+                            <div class="data__table-header">
+                                <div class="row">
+                                    <div class="col-2">ID</div>
+                                    <div class="col-4">First name</div>
+                                    <div class="col-4">Last name</div>
+                                    <div class="col-2">Age</div>
+                                </div>
+                            </div>
+                            <div class="data__table-body" id="tableBody">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- center section -->
+                    <!-- right sidebar -->
+                    <div class="col-2">
+                        <div class="right__sidebar">
+                            <button id="createBtn" class="data__button">Create</button>
+                            <button id="updateBtn" class="data__button">Update</button>
+                            <button id="removeBtn" class="data__button">Remove</button>
+                            <button id="clearBtn" class="data__button">Clear</button>
+                            <button id="saveBtn" class="data__button">Save LS</button>
+                        </div>
+                    </div>
+                    <!-- right sidebar -->
+                </div>
+            </div>
+        </div>
+        <!-- Main  -->
+        <!-- footer -->
+        <div class="footer">
+            <div class="row">
+                <div class="container">
+                    2019 :: Homework User's Database
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+    </div>
+    <!-- wrapper -->
+    <script src="js/index.js"></script>
+    <script src="js/init.js"></script>
+</body>
+
+</html>
