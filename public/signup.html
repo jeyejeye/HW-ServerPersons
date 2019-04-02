@@ -40,18 +40,18 @@
                         <label for="email">Email:</label>
                         <input type="text" placeholder="Enter Email:" name="email" class="data__input" required>
                         <label>Password:</label>
-                        <input type="password" name="password" id="loginFormPassword" class="data__input" placeholder="Password:"
+                        <input type="password" name="password" id="password" class="data__input" placeholder="Password:"
                             required>
                             <label for="psw-repeat">Repeat Password:</label>
-                            <input type="password" placeholder="Repeat Password:" name="psw-repeat" class="data__input" required>
+                            <div class="message" id="message">Passwords do not match</div>
+                            <input type="password" placeholder="Repeat Password:" name="psw-repeat" id="repeatPassword" class="data__input" required>
                         <br>
-                        <button type="submit" class="data__button" id="signUpBtn">Sign Up</button>
+                        <button type="submit" class="data__button" id="signUpBtn" disabled>Sign Up</button>
                         <button type="button" class="data__button cancel__button">Cancel</button>
                         <br>
                         Already have an account? <a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
                     </form>
                     
-               
                     
                     <!-- center section -->
                 </div>
@@ -69,6 +69,7 @@
         <!-- footer -->
     </div>
     <!-- wrapper -->
+    <script src="js/passw.js"></script>
     <script src="js/index.js"></script>
 
 </body>

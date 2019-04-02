@@ -315,3 +315,8 @@ button {
 .cancel__button:hover {
   background-color: #C1002A;
 }
+.message {
+  color: red;
+  font-size: 0.8em;
+  display: none;
+}
