@@ -6,11 +6,30 @@ function ready() {
         .catch(error => {
             console.log(error); // Error: Not Found
           });
-     
-    //Внутри этого метода dataArr нормально заполняется с сервера. А потом неожиданно его длинна становится = 0
-
-//    alert('Почему то dataArr.length = ' + dataArr.length);
 
 }
 
 document.addEventListener("DOMContentLoaded", ready);
+document.addEventListener('click', function (event) {
+    let target = event.target;
+  
+    if (target.tagName !== 'BUTTON') {
+      return;
+    }
+    if (target.id === 'createBtn') {
+      createEntry();
+    }
+    if (target.id === 'updateBtn') {
+      updateEntry();
+    }
+    if (target.id === 'removeBtn') {
+      deleteEntry();
+    }
+    if (target.id === 'clearBtn') {
+      clearAll();
+    }
+    if (target.id === 'saveBtn') {
+      saveDataLS();
+    }
+  });
+  

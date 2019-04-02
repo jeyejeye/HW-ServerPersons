@@ -234,26 +234,4 @@ function check(id) {
 
 
 
-document.addEventListener('click', function (event) {
-  let target = event.target;
-
-  if (target.tagName !== 'BUTTON') {
-    return;
-  }
-  if (target.id === 'createBtn') {
-    createEntry();
-  }
-  if (target.id === 'updateBtn') {
-    updateEntry();
-  }
-  if (target.id === 'removeBtn') {
-    deleteEntry();
-  }
-  if (target.id === 'clearBtn') {
-    clearAll();
-  }
-  if (target.id === 'saveBtn') {
-    saveDataLS();
-  }
-});
 
