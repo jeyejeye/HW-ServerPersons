@@ -10,6 +10,7 @@ function ready() {
 }
 
 document.addEventListener("DOMContentLoaded", ready);
+
 document.addEventListener('click', function (event) {
     let target = event.target;
   

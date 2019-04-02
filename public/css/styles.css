@@ -144,12 +144,14 @@ button {
   padding: 0;
   width: 100%;
 }
-.header .toolbar__logo {
+.header .toolbar__logo a{
   float: left;
   display: block;
   width: 15em;
   font-size: 1.7em;
   font-weight: 700;
+  color: #000000;
+  text-decoration: none;
 }
 .toolbar__login {
   float: right;
