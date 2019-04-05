@@ -13,10 +13,19 @@ function addEntry(id, fName, lName, age) {
 }
 
 function updEntry(indArr, fName, lName, age) {
-  var user = dataArr[indArr];
-  fName === '' ? user.fName = user.fName : user.fName = fName;
-  lName === '' ? user.lName = user.lName : user.lName = lName;
-  age === '' ? user.age = user.age : user.age = age;
+  const user = dataArr[indArr];
+
+  if (fName !== '') {
+    user.fName = fName;
+  }
+
+  if (lName !== '') {
+    user.lName = lName;
+  }
+
+  if (age !== '') {
+    user.age = age;
+  }
 }
 
 function delEntry(indArr) {
@@ -89,7 +98,7 @@ function requestUpdateEntry(id, fName, lName, age) {
   request.open("POST", "/updateEntry", true);
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   request.send(formData);
-};
+}
 
 function requestRemoveEntry(id) {
   let userID = '1';
@@ -227,11 +236,7 @@ function check(id) {
     return false;
   }
 
-  if (parseInt(id) !== +id) {
-    return false;
-  }
-
-  return true;
+  return parseInt(id) === +id;
 }
 
 
